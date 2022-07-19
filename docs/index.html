@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    *{box-sizing: border-box;}
+    body{
+      background-color: hsl(216, 12%, 8%);
+      font-family:  'Overpass', sans-serif;
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+      grid-template-rows: 1fr 3fr 1fr;
+      justify-items: center;
+      align-items: center;
+    }
+    [class^="box"]{
+      position: relative;
+      width: 350px;
+      height: 350px;
+      padding:30px;
+      margin: 5px;
+      border-radius: 20px;
+      background-color: hsl(213, 19%, 18%);
+      color: hsl(0, 0%, 100%);
+       display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .box-first{
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+    .box-second{
+      grid-column: 2/3;
+      grid-row: 2/3;
+      align-items: center;
+      z-index: -1;
+    }
+     .box-second.submit-click{
+      z-index: 2;
+    }
+    .star-img{
+      width: 40px;
+      padding: 12px 0;
+      margin-bottom: 25px;
+      border-radius: 50%;
+      background-color: hsl(214, 19%, 23%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .thankyou-img{
+      width: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .thankyou-img img{
+      width: 100%;
+    }
+
+    h1{
+      font-size: 22px;
+      font-weight: bold;
+      margin: 10px 0 ;
+    }
+    h3{
+      font-size: 15px;
+      font-weight: 400;
+      color: hsl(217, 12%, 63%);
+      margin: 5px 0;
+    }
+    .box-second h3{
+      text-align: center;
+    }
+    .rating{
+      background-color: hsl(214, 19%, 23%);
+      padding: 5px;
+      border-radius: 15px;
+      width: 170px;
+      margin: 15px 0;
+    }
+    .rating h3{
+       margin: 0;
+       text-align: center;
+       color: hsl(25, 97%, 53%);
+       font-size: 13px;
+    }
+    .numbers{
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+    .numbers button{
+      background-color: hsl(214, 19%, 23%);
+      color: hsl(217, 12%, 63%);
+      padding: 12px 0;
+      border-radius: 50%;
+      border: none;
+      width: 40px;
+      cursor: pointer;
+    }
+    .numbers button:hover{
+    background-color: rgb(251, 116, 19);
+    color: hsl(0, 0%, 100%);
+    }
+    .numbers .number-click{
+      background-color: hsl(216, 12%, 54%);
+      color: hsl(0, 0%, 100%);
+    }
+    .submit{
+      background-color: hsl(25, 97%, 53%);
+      color: hsl(0, 0%, 100%);
+      border: none;
+      padding: 10px 100px;
+      border-radius: 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+    .submit:hover{
+      background-color: hsl(0, 0%, 100%);
+      color: hsl(25, 97%, 53%);
+    }
+
+    .attribution{
+      grid-column: 2/3;
+      grid-row: 3/4;
+      align-self: end;
+      color: hsl(0, 0%, 100%);
+      font-size: 13px;
+    }
+    .attribution a{
+      color: hsl(0, 0%, 100%);
+    }    
+  </style>
+</head>
+<body>
+  <div class="box-first">
+  <!-- Rating state start -->
+  <div class="star-img"><img src="./images/icon-star.svg"></div> 
+  
+  <h1>How did we do?</h1> 
+
+  <h3>Please let us know how we did with your support request. All feedback is appreciated 
+  to help us improve our offering!</h3>
+  
+  <div class="numbers">
+  <button >1</button>
+  <button >2</button>
+  <button >3</button>
+  <button>4</button>
+  <button>5</button> 
+  </div>
+  <button class="submit">SUBMIT</button> 
+  </div>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+ <div class="box-second">
+ <div class="thankyou-img"><img src="./images/illustration-thank-you.svg"></div> 
+ <div class="rating"> <h3>You selected <span></span> out of 5</h3> </div>
+
+  <h1>Thank you!</h1>
+
+  <h3>We appreciate you taking the time to give a rating. If you ever need more support, 
+  don’t hesitate to get in touch!</h3> 
+</div>
+  <!-- Thank you state end -->
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Karen</a>.
+  </div>
+</body>
+<script>
+  $(document).ready(function() {
+    $('.numbers button').click(onNumberClick);
+
+    function onNumberClick(){
+      $('.numbers button').removeClass('number-click')
+      $(this).addClass('number-click')
+      
+      let rating = $(this).text()
+      $('.rating span').text(rating);
+
+      $('.submit').click(onSubmitClick);
+    }
+ 
+     function onSubmitClick(){
+       $('.box-second').addClass('submit-click')
+     }
+  })
+</script>
+</html>
