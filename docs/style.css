@@ -11,11 +11,11 @@ body{
 }
 [class^="box"]{
   position: relative;
-  width: 350px;
-  height: 350px;
-  padding:30px;
-  margin: 5px;
-  border-radius: 20px;
+  width: 21.87em;
+  height: 21.87em;
+  padding: 1.87em;
+  margin: 0.31em;
+  border-radius: 1.25em;
   background-color: hsl(213, 19%, 18%);
   color: hsl(0, 0%, 100%);
    display: flex;
@@ -36,9 +36,9 @@ body{
   z-index: 2;
 }
 .star-img{
-  width: 40px;
-  padding: 12px 0;
-  margin-bottom: 25px;
+  width: 2.5em;
+  padding: 0.75em 0;
+  margin-bottom: 1.56em;
   border-radius: 50%;
   background-color: hsl(214, 19%, 23%);
   display: flex;
@@ -46,55 +46,55 @@ body{
   align-items: center;
 }
 .thankyou-img{
-  width: 130px;
+  width: 8.12em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 0.93em;
 }
 .thankyou-img img{
   width: 100%;
 }
 
 h1{
-  font-size: 22px;
+  font-size: 1.37em;
   font-weight: bold;
-  margin: 10px 0 ;
+  margin: 0.62em 0 ;
 }
 h3{
-  font-size: 15px;
+  font-size: 0.93em;
   font-weight: 400;
   color: hsl(217, 12%, 63%);
-  margin: 5px 0;
+  margin: 0.31em 0;
 }
 .box-second h3{
   text-align: center;
 }
 .rating{
   background-color: hsl(214, 19%, 23%);
-  padding: 5px;
-  border-radius: 15px;
-  width: 170px;
-  margin: 15px 0;
+  padding: 0.31em;
+  border-radius: 0.93em;
+  width: 10.62em;
+  margin: 0.93em 0;
 }
 .rating h3{
    margin: 0;
    text-align: center;
    color: hsl(25, 97%, 53%);
-   font-size: 13px;
+   font-size: 0.81em;
 }
 .numbers{
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  margin: 1.25em 0;
 }
 .numbers button{
   background-color: hsl(214, 19%, 23%);
   color: hsl(217, 12%, 63%);
-  padding: 12px 0;
+  padding: 0.90em 0;
   border-radius: 50%;
   border: none;
-  width: 40px;
+  width: 3em;
   cursor: pointer;
 }
 .numbers button:hover{
@@ -109,10 +109,10 @@ color: hsl(0, 0%, 100%);
   background-color: hsl(25, 97%, 53%);
   color: hsl(0, 0%, 100%);
   border: none;
-  padding: 10px 100px;
-  border-radius: 20px;
+  padding: 0.75em 6.25em;
+  border-radius: 1.25em;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 0.125em;
   cursor: pointer;
 }
 .submit:hover{
@@ -125,7 +125,7 @@ color: hsl(0, 0%, 100%);
   grid-row: 3/4;
   align-self: end;
   color: hsl(0, 0%, 100%);
-  font-size: 13px;
+  font-size: 0.81em;
 }
 .attribution a{
   color: hsl(0, 0%, 100%);
