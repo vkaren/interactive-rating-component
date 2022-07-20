@@ -61,13 +61,13 @@ h1{
   font-weight: bold;
   margin: 0.62em 0 ;
 }
-h3{
+p{
   font-size: 0.93em;
   font-weight: 400;
   color: hsl(217, 12%, 63%);
   margin: 0.31em 0;
 }
-.box-second h3{
+.box-second p{
   text-align: center;
 }
 .rating{
@@ -77,7 +77,7 @@ h3{
   width: 10.62em;
   margin: 0.93em 0;
 }
-.rating h3{
+.rating p{
    margin: 0;
    text-align: center;
    color: hsl(25, 97%, 53%);
