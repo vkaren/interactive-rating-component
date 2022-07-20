@@ -5,16 +5,17 @@ body{
   font-family:  'Overpass', sans-serif;
   display: grid;
   grid-template-columns: 20% 60% 20%;
-   grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  justify-items: center;
+  align-items: center;
 }
 main{
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 1fr 2fr 1fr;
-  grid-column: 2/3;
-  grid-row: 1/2;
+
   justify-items: center;
-  align-items: center;
+  align-items: center; 
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 [class^="box"]{
   position: relative;
@@ -123,13 +124,13 @@ color: hsl(0, 0%, 100%);
   color: hsl(25, 97%, 53%);
 }
 
-.attribution{
+footer{
   grid-column: 2/3;
-  grid-row: 2/3;
+  grid-row: 3/4;
   align-self: end;
   color: hsl(0, 0%, 100%);
   font-size: 0.81em;
 }
-.attribution a{
+footer a{
   color: hsl(0, 0%, 100%);
 } 
