@@ -1,12 +1,11 @@
 $(document).ready(function() {
     $('.numbers button').click(onNumberClick);
 
-    function onNumberClick(){
+    function onNumberClick(event){
       $('.numbers button').removeClass('number-click')
-      $(this).addClass('number-click');
+      event.target.addClass('number-click');
       
-      let rating = $(this).text();
-      $('.rating span').text(rating);
+      $('.rating span').text(event.target.text());
 
       $('.submit').click(onSubmitClick);
     }
